@@ -13,7 +13,9 @@ Beer.destroy_all
 
 puts "Creating 50 beers"
 50.times do
-  Beer.create!(name: Faker::Beer.name, abv: Faker::Beer.alcohol, ibu: Faker::Beer.ibu, style: Faker::Beer.style, photo: Faker::LoremFlickr.image(size: "150x150", search_terms: ['beer']),country: Faker::Address.country, hops: Faker::Beer.hop)
+  Beer.create!(name: Faker::Beer.name, abv: Faker::Beer.alcohol, ibu: Faker::Beer.ibu, style: Faker::Beer.style,
+               photo: "https://images.unsplash.com/photo-1600788886242-5c96aabe3757?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+               country: Faker::Address.country, hops: Faker::Beer.hop)
 end
 
 puts "Destroying all users"
