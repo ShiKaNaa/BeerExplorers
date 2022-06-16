@@ -24,4 +24,9 @@ User.destroy_all
 puts "Creating 2 users"
 User.create!(email: "test101@gmail.com", nickname: "Shika", password: "123456")
 User.create!(email: "test202@gmail.com", nickname: "Sorbet", password: "123456")
+
+puts "Creating 1 bar"
+Bar.destroy_all
+Bar.create!(address: "37 rue des peupliers", name: "La touRchette")
+
 puts "I'm done"

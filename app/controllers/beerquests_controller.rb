@@ -5,9 +5,9 @@ class BeerquestsController < ApplicationController
   end
 
   def create
-    @user_id = current_user
     @beerquest = Beerquest.new(beerquest_params)
-    @beerquest.save
+    @beerquest.user = current_user
+    @beerquest.save!
     redirect_to beerquests_path
     # else
     #   render :index
@@ -17,6 +17,6 @@ class BeerquestsController < ApplicationController
   private
 
   def beerquest_params
-    params.require(:beerquest).permit(:name, :beer_id, @user_id)
+    params.require(:beerquest).permit(:name, :beer_id, :bar_id)
   end
 end

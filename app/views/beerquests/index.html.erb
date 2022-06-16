@@ -4,6 +4,7 @@
 <%= simple_form_for(@beerquest_new) do |f| %>
   <%= f.input :name %>
   <%= f.association :beer %>
+  <%= f.association :bar %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
 
