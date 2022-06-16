@@ -1,0 +1,12 @@
+<h1><%= @beer.name %></h1>
+
+<div class="beer-info-card">
+<%= image_tag "#{@beer.photo}", alt: "bière", width: 200 %>
+  <ul>
+    <li><%= @beer.style %></li>
+    <li><%= @beer.hops %></li>
+    <li><%= @beer.abv %></li>
+    <li><%= @beer.ibu %></li>
+    <li><%= @beer.country %></li>
+  </ul>
+</div>
