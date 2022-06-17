@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_14_190754) do
+ActiveRecord::Schema.define(version: 2022_06_17_074942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 2022_06_14_190754) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "beer_id"
     t.index ["beer_id"], name: "index_chatrooms_on_beer_id"
+  end
+
+  create_table "list_of_beers_for_beerquests", force: :cascade do |t|
+    t.bigint "beerquest_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "beer_id"
+    t.index ["beer_id"], name: "index_list_of_beers_for_beerquests_on_beer_id"
+    t.index ["beerquest_id"], name: "index_list_of_beers_for_beerquests_on_beerquest_id"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -118,6 +127,8 @@ ActiveRecord::Schema.define(version: 2022_06_14_190754) do
   add_foreign_key "beerquests", "beers"
   add_foreign_key "beerquests", "users"
   add_foreign_key "chatrooms", "beers"
+  add_foreign_key "list_of_beers_for_beerquests", "beerquests"
+  add_foreign_key "list_of_beers_for_beerquests", "beers"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "ratings", "beers"
