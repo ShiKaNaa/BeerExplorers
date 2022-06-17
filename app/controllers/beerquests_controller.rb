@@ -19,4 +19,5 @@ class BeerquestsController < ApplicationController
   def beerquest_params
     params.require(:beerquest).permit(:name, :beer_id, :bar_id)
   end
+
 end

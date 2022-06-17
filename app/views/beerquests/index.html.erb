@@ -4,10 +4,14 @@
 <%= simple_form_for(@beerquest_new) do |f| %>
   <%= f.input :name %>
   <%= f.association :beer %>
-  <%= f.association :bar %>
+  <%# <%= f.association :bar %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
 
 <% @beerquests.each do |beerquest| %>
-<p><%= beerquest.name %></p>
+  <p><%= beerquest.name %>
+    <ul>
+    <li><%= beerquest.beer.name %></li>
+    </ul>
+  </p>
 <% end %>
