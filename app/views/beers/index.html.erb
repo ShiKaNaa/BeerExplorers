@@ -1,12 +1,12 @@
 <h1>Voici toutes nos bières</h1>
 
-<div class="container">
+<div class="container-beers">
   <div class="cards-beer">
     <% @beers.each do |beer| %>
       <div class="card-beer">
-        <h5><%= beer.name %></h5>
+        <h5 class="card-beer-title"><%= beer.name %></h5>
         <%= image_tag "#{beer.photo}", alt: "bière", width: 200 %>
-        <p><%= beer.abv  %>% <%= beer.ibu %> IBU</p>
+        <p><%= beer.style %>, <%= beer.ibu %> IBU</p>
         <%= link_to "Plus d'infos", beer_path(beer), class: "" %>
       </div>
     <% end %>

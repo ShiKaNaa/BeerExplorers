@@ -1,9 +1,21 @@
+.container-beers {
+  margin: auto 150px;
+}
+
 .cards-beer {
   display: grid;
   grid-template-columns:  repeat(4, 1fr);
   gap: 16px 16px;
 
   .card-beer {
-    border: 1px black solid;
+    border: 1px #0000004a solid;
+    border-radius: 3px;
+
+    .card-beer-title {
+      text-align: center;
+      background-color: #fca311;
+      padding: 16px;
+      margin-bottom: 0px;
+    }
   }
 }
