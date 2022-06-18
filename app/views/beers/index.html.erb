@@ -5,9 +5,14 @@
     <% @beers.each do |beer| %>
       <div class="card-beer">
         <h5 class="card-beer-title"><%= beer.name %></h5>
-        <%= image_tag "#{beer.photo}", alt: "bière", width: 200 %>
-        <p><%= beer.style %>, <%= beer.ibu %> IBU</p>
-        <%= link_to "Plus d'infos", beer_path(beer), class: "" %>
+        <div class="wrapper-beer-info">
+          <%= image_tag "#{beer.photo}", alt: "bière", width: 200, height: "auto"%>
+          <p>
+            <%= beer.style %>,
+            <%= beer.ibu %> IBU
+            <%= link_to "Plus d'infos", beer_path(beer), class: "" %>
+          </p>
+        </div>
       </div>
     <% end %>
   </div>
