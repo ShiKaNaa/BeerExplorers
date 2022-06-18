@@ -3,7 +3,7 @@
 <div class="container">
   <div class="cards-group">
     <% @beers.each do |beer| %>
-      <div class="card">
+      <div class="card-beer">
         <h5><%= beer.name %></h5>
         <%= image_tag "#{beer.photo}", alt: "bière", width: 200 %>
         <p><%= beer.abv  %> <%= beer.ibu %></p>
