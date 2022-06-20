@@ -3,10 +3,10 @@
 <div class="beer-info-card">
 <%= image_tag "#{@beer.photo}", alt: "bière", width: 200 %>
   <ul>
-    <li><%= @beer.style %></li>
-    <li><%= @beer.hops %></li>
-    <li><%= @beer.abv %></li>
-    <li><%= @beer.ibu %></li>
-    <li><%= @beer.country %></li>
+    <li>Style : <%= @beer.style %></li>
+    <li>Houblon(s) : <%= @beer.hops %></li>
+    <li>Alcool : <%= @beer.abv %></li>
+    <li>Amerté : <%= @beer.ibu %></li>
+    <li>Provenance : <%= @beer.country %></li>
   </ul>
 </div>
