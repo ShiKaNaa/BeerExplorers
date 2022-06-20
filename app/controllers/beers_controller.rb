@@ -5,5 +5,6 @@ class BeersController < ApplicationController
 
   def show
     @beer = Beer.find(params[:id])
+    @user_beerquest = Beerquest.where(current_user == :user_id)
   end
 end
